@@ -13,6 +13,8 @@
 		35E3E68D198336550096B5BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35E3E68B198336550096B5BA /* Main.storyboard */; };
 		35E3E68F198336550096B5BA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35E3E68E198336550096B5BA /* Images.xcassets */; };
 		35E3E69B198336550096B5BA /* NSUserDefaults__Segues_and_Protocols_Challenge_SolutionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E3E69A198336550096B5BA /* NSUserDefaults__Segues_and_Protocols_Challenge_SolutionTests.m */; };
+		35E3E6A6198337220096B5BA /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E3E6A5198337220096B5BA /* SignInViewController.m */; };
+		35E3E6A9198337460096B5BA /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E3E6A8198337460096B5BA /* CreateAccountViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,10 @@
 		35E3E694198336550096B5BA /* NSUserDefaults, Segues and Protocols Challenge SolutionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NSUserDefaults, Segues and Protocols Challenge SolutionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35E3E699198336550096B5BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35E3E69A198336550096B5BA /* NSUserDefaults__Segues_and_Protocols_Challenge_SolutionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSUserDefaults__Segues_and_Protocols_Challenge_SolutionTests.m; sourceTree = "<group>"; };
+		35E3E6A4198337220096B5BA /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		35E3E6A5198337220096B5BA /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
+		35E3E6A7198337460096B5BA /* CreateAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountViewController.h; sourceTree = "<group>"; };
+		35E3E6A8198337460096B5BA /* CreateAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAccountViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,10 @@
 				35E3E688198336550096B5BA /* ViewController.h */,
 				35E3E689198336550096B5BA /* ViewController.m */,
 				35E3E68B198336550096B5BA /* Main.storyboard */,
+				35E3E6A7198337460096B5BA /* CreateAccountViewController.h */,
+				35E3E6A8198337460096B5BA /* CreateAccountViewController.m */,
+				35E3E6A4198337220096B5BA /* SignInViewController.h */,
+				35E3E6A5198337220096B5BA /* SignInViewController.m */,
 				35E3E68E198336550096B5BA /* Images.xcassets */,
 				35E3E681198336550096B5BA /* Supporting Files */,
 			);
@@ -215,7 +225,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35E3E6A6198337220096B5BA /* SignInViewController.m in Sources */,
 				35E3E68A198336550096B5BA /* ViewController.m in Sources */,
+				35E3E6A9198337460096B5BA /* CreateAccountViewController.m in Sources */,
 				35E3E687198336550096B5BA /* AppDelegate.m in Sources */,
 				35E3E684198336550096B5BA /* main.m in Sources */,
 			);
