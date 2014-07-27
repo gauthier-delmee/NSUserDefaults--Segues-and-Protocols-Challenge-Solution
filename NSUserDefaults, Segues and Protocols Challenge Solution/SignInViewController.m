@@ -8,7 +8,6 @@
 
 #import "SignInViewController.h"
 #import "CreateAccountViewController.h"
-#import "ViewController.h"
 
 @interface SignInViewController ()
 
@@ -45,15 +44,12 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-//    if ([sender isKindOfClass:[UIButton class]]) {
-//        if ([segue.destinationViewController isKindOfClass:[ViewController class]]) {
-//            ViewController *nextViewController = segue.destinationViewController;
-//        }
-//    } else if ([sender isKindOfClass:[UIBarButtonItem class]]){
-//        if ([segue.destinationViewController isKindOfClass:[CreateAccountViewController class]]) {
-//            CreateAccountViewController *nextViewController = segue.destinationViewController;
-//        }
-//    }
+    if ([sender isKindOfClass:[UIBarButtonItem class]]){
+        if ([segue.destinationViewController isKindOfClass:[CreateAccountViewController class]]) {
+            CreateAccountViewController *createAccountViewController = segue.destinationViewController;
+            createAccountViewController.delegate = self;
+        }
+    }
 }
 
 - (IBAction)createAccountBarButtonPressed:(UIBarButtonItem *)sender {
@@ -61,6 +57,26 @@
 }
 
 - (IBAction)loginButtonPressed:(UIButton *)sender {
-    [self performSegueWithIdentifier:@"toViewController" sender:sender];
+    NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:USER_NAME];
+    NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:USER_PASSWORD];
+    
+    if ([self.usernameTextField.text isEqualToString:username] && [self.passwordTextField.text isEqualToString:password]) {
+        [self performSegueWithIdentifier:@"toViewController" sender:sender];
+    } else {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Login failed" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+    }
 }
+
+#pragma mark - CreateAccountViewControllerDelegate Methods
+-(void)didCancel{
+    NSLog(@"cancel button in create account view controller was pressed");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)didCreateAccount{
+    NSLog(@"create account button in create account view controller was pressed");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end

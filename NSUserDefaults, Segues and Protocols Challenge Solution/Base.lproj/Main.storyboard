@@ -150,7 +150,7 @@
                         <outlet property="passwordTextField" destination="VZ3-BV-3FA" id="BQv-LF-F0I"/>
                         <outlet property="usernameTextField" destination="shQ-zv-3rx" id="77v-32-6p1"/>
                         <segue destination="7hY-R9-6rQ" kind="presentation" identifier="toCreateAccountViewController" id="82F-Hg-zIp"/>
-                        <segue destination="vXZ-lx-hvc" kind="presentation" identifier="toController" id="M1u-H2-hhQ"/>
+                        <segue destination="vXZ-lx-hvc" kind="presentation" identifier="toViewController" id="M1u-H2-hhQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ieb-Sk-ulp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -199,7 +199,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="161" width="118" height="30"/>
+                                    <rect key="frame" x="20" y="161" width="158" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="createAccountButtonPressed:" destination="7hY-R9-6rQ" eventType="touchUpInside" id="Dsi-iQ-ZZy"/>

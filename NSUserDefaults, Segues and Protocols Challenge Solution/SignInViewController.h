@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CreateAccountViewController.h"
 
-@interface SignInViewController : UIViewController
+@interface SignInViewController : UIViewController <CreateAccountViewControllerDelegate>
 
 - (IBAction)createAccountBarButtonPressed:(UIBarButtonItem *)sender;
 - (IBAction)loginButtonPressed:(UIButton *)sender;

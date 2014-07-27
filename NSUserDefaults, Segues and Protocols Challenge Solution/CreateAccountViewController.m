@@ -46,9 +46,41 @@
 }
 */
 
+#pragma mark - Actions
+
 - (IBAction)createAccountButtonPressed:(UIButton *)sender {
+    
+    
+    
+    NSLog(@"%@", self.usernameTextField.text);
+    if (self.usernameTextField.text.length != 0 && self.passwordTextField.text.length != 0 && self.confirmPasswordTextField.text.length != 0) {
+        if (![self.passwordTextField.text isEqualToString:self.confirmPasswordTextField.text]) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Password error" message:@"The password and confirm password fields don't match" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+        } else {
+            //this is where the account details are saved in nsuserdefaults
+            
+            [[NSUserDefaults standardUserDefaults] setObject:self.usernameTextField.text forKey:USER_NAME];
+            [[NSUserDefaults standardUserDefaults] setObject:self.passwordTextField.text forKey:USER_PASSWORD];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            [self.delegate didCreateAccount];
+        }
+    } else {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Create Account Error" message:@"Please fill in all the fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+    }
 }
 
 - (IBAction)cancelButtonPressed:(UIButton *)sender {
+    [self.delegate didCancel];
 }
+
+#pragma mark - Helper Methods
+-(NSDictionary *)accountObjectAsPropertyList{
+    NSDictionary *dictionary = @{USER_NAME : self.usernameTextField, USER_PASSWORD : self.passwordTextField};
+    
+    return dictionary;
+}
+
 @end

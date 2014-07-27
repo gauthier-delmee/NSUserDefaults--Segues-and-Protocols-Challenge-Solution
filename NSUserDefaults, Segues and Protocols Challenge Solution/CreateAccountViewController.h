@@ -8,7 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+#define USER_NAME @"username"
+#define USER_PASSWORD @"password"
+
+@protocol CreateAccountViewControllerDelegate <NSObject>
+
+@required
+-(void)didCancel;
+-(void)didCreateAccount;
+
+@end
+
 @interface CreateAccountViewController : UIViewController
+
+@property (weak, nonatomic) id <CreateAccountViewControllerDelegate> delegate;
 
 - (IBAction)createAccountButtonPressed:(UIButton *)sender;
 - (IBAction)cancelButtonPressed:(UIButton *)sender;
